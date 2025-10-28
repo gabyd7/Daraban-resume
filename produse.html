@@ -1,0 +1,102 @@
+<!-- flori.html -->
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloriMag – Florile noastre</title>
+    <style>
+        body {
+            font-family: ArialBrush Script 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: #fff7f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #ed8aeb;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .flori-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .floare {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        .floare img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .floare h3 {
+            color: #121111;
+        }
+        footer {
+            background: #fb9cc4;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        a.back {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #f5afee;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Florile din magazin</h1>
+        <a class="back" href="index.html">⟵ Înapoi la intrare</a>
+    </header>
+
+    <div class="flori-container">
+        <div class="floare">
+            <img src="trandafir.jpg" alt="Trandafir roșu">
+            <h3>Trandafir roșu</h3>
+            <p>Simbol al iubirii și pasiunii. Perfect pentru ocazii romantice.</p>
+            <strong>Preț: 25 lei/buc</strong>
+        </div>
+        <div class="floare">
+            <img src="lalea.jpg" alt="Lalea galbenă">
+            <h3>Lalea galbenă</h3>
+            <p>Reprezintă bucuria și prietenia. Ideală pentru cadouri vesele.</p>
+            <strong>Preț: 10 lei/buc</strong>
+        </div>
+        <div class="floare">
+            <img src="orhidee.jpg" alt="Orhidee mov">
+            <h3>Orhidee mov</h3>
+            <p>Elegantă și rafinată, perfectă pentru decoruri de lux.</p>
+            <strong>Preț: 60 lei/buc</strong>
+        </div>
+        <div class="floare">
+            <img src="crin.jpg" alt="Crin alb">
+            <h3>Crin alb</h3>
+            <p>Simbol al purității și eleganței. Potrivit pentru ceremonii.</p>
+            <strong>Preț: 30 lei/buc</strong>
+        </div>
+    </div>
+
+    <footer>
+        &copy; Secret-Flowers – Cu finețe și rafinament
+    </footer>
+</body>
+</html>
