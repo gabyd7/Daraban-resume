@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Comandă Buchete de Flori</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffeef4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 450px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #d12f6b;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #d12f6b;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b8275d;
+        }
+
+        .rezultat {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff4f8;
+            border-left: 4px solid #d12f6b;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Plasează o Comandă</h2>
+
+    <label>Nume client</label>
+    <input type="text" id="nume" placeholder="Introduceți numele">
+
+    <label>Telefon</label>
+    <input type="text" id="telefon" placeholder="Ex: 060000000">
+
+    <label>Alege buchetul</label>
+    <select id="buchet">
+        <option value="250">Trandafiri – 250 lei</option>
+        <option value="180">Lalele – 180 lei</option>
+        <option value="300">Buchet mixt – 300 lei</option>
+    </select>
+
+    <label>Cantitate</label>
+    <input type="number" id="cantitate" min="1" value="1">
+
+    <button onclick="comanda()">Plasează comanda</button>
+
+    <div class="rezultat" id="rezultat"></div>
+</div>
+
+<script>
+function comanda() {
+    let nume = document.getElementById("nume").value;
+    let telefon = document.getElementById("telefon").value;
+    let buchet = document.getElementById("buchet");
+    let pret = parseInt(buchet.value);
+    let numeBuchet = buchet.options[buchet.selectedIndex].text;
+    let cantitate = parseInt(document.getElementById("cantitate").value);
+
+    if (nume === "" || telefon === "") {
+        alert("Completați toate câmpurile!");
+        return;
+    }
+
+    let total = pret * cantitate;
+
+    document.getElementById("rezultat").style.display = "block";
+    document.getElementById("rezultat").innerHTML =
+        "<strong>Comandă plasată cu succes!</strong><br><br>" +
+        "Client: " + nume + "<br>" +
+        "Telefon: " + telefon + "<br>" +
+        "Buchet: " + numeBuchet + "<br>" +
+        "Cantitate: " + cantitate + "<br>" +
+        "<strong>Total: " + total + " lei</strong>";
+}
+</script>
+
+</body>
+</html>

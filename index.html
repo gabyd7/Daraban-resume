@@ -4,48 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secret-Flowers – Bine ați venit</title>
+    <title>Secret-Flowers</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background: url('flori-bg.jpg') no-repeat center center/cover;
             font-family: 'Segoe UI', sans-serif;
-            text-align: center;
-            color: #fff;
+            background-color: #f5e9ed;
+            color: #3a3a3a;
         }
-        .container {
-            background-color: rgba(0, 0, 0, 0.4);
-            padding: 80px 20px;
-            height: 100vh;
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: rgba(255, 255, 255, 0.3);
         }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-        }
-        a.button {
-            background: #ff30f1;
-            color: white;
-            padding: 15px 30px;
+
+        header nav a {
+            margin: 0 15px;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
+            color: #3a3a3a;
+            font-weight: 500;
         }
-        a.button:hover {
-            background: #f466ce;
+
+        header nav a:hover {
+            text-decoration: underline;
         }
-    </style>
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 100px;
+            background: linear-gradient(to right, #e9c5d6, #f3d6e0);
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 70px;
+            color: #704c57;
+            margin-bottom: 10px;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+        }
+
+        .hero-text button {
+            padding: 15px 35px;
+            font-size: 18px;
+            background-color: #704c57;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .hero-text button:hover {
+            background-color: #8b6070;
+        }
+
+        .hero img {
+            max-width: 45%;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f3d6e0;
+            font-size: 14px;
+            color: #704c57;
+            
+        }
+        .dark-mode {
+    background-color: #6060609c;
+    color: #f1f1f15b;
+}
+
+.dark-mode header {
+    background-color: #706f6f48;
+}
+
+.dark-mode .hero {
+    background: linear-gradient(to right, hsla(0, 0%, 43%, 0.638), #f6278b6f);
+}
+
+.dark-mode footer {
+    background-color: #bcbbbb;
+    color: #f1f1f1;
+}
+
+#toggleMode {
+    margin-left: 15px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #e9e3e5;
+    color: white;
+    cursor: pointer;
+}
+
+#toggleMode:hover {
+    background-color: #a5a5a5;
+}
+        
+     </style>
 </head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const buton = document.getElementById("toggleMode");
+
+    if (localStorage.getItem("tema") === "dark") {
+        document.body.classList.add("dark-mode");
+        buton.textContent = "☀️";
+    }
+
+    buton.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+
+        if (document.body.classList.contains("dark-mode")) {
+            buton.textContent = "☀️";
+            localStorage.setItem("tema", "dark");
+        } else {
+            buton.textContent = "🌙";
+            localStorage.setItem("tema", "light");
+        }
+    });
+});
+</script>
+
 <body>
-    <div class="container">
-        <h1>Bun venit la Secret-Flowers</h1>
-        <p>Descoperă cele mai frumoase flori și buchete pentru orice ocazie.</p>
-        <a class="button" href="produse.html">Intră în magazin</a>
-    </div>
+
+    <header>
+        <nav>
+            <a href="produse.html">Magazin</a>
+            <a href="Untitled-1(despre noi).html">Despre noi</a>
+            <a href="Untitled-1.html">Comandă buchet</a>
+        </nav>
+        <div>
+            <strong>+373 605 29 341</strong>
+            <button id="toggleMode">☀️/🌙</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Secret-Flowers</h1>
+            <p>Magazinul care te ajută să aduci zâmbete pe chipul tuturor!</p>
+            
+             <a class="back" href="produse.html">
+                <button>Alege un buchet </button></a>
+        </div>
+        <img src="imagine.index.jpg" alt="Buchet de flori roz">
+        
+    </section>
+
+    <footer>
+         2025 Secret-Flowers — Toate drepturile rezervate
+    </footer>
+
 </body>
 </html>
